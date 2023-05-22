@@ -1,6 +1,7 @@
 import { useSignal } from '@preact/signals';
 import { Truncated } from './Truncated';
 import { useRef } from 'preact/hooks';
+import { Analytics } from '@vercel/analytics/react';
 
 export function App() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -43,6 +44,7 @@ export function App() {
         value={width.value}
         onInput={(e) => (width.value = parseInt(e.currentTarget.value))}
       />
+			<Analytics />
     </>
   );
 }
